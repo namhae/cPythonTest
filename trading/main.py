@@ -8,11 +8,12 @@ from .preprocessor import Preprocessor
 from .trade_executor import TradeExecutor
 
 # Cython modules
-from .analysis_module1 import SMAAnalysis
-from .analysis_module2 import ROCAnalysis
-from .analysis_module3 import MomentumAnalysis
-from .aggregator import Aggregator
-from .decision_maker import DecisionMaker
+# Cython extensions are organized under the cy package
+from .cy.analysis_module1 import SMAAnalysis
+from .cy.analysis_module2 import ROCAnalysis
+from .cy.analysis_module3 import MomentumAnalysis
+from .cy.aggregator import Aggregator
+from .cy.decision_maker import DecisionMaker
 
 
 def get_mock_prices(n=20):

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61", "wheel", "Cython"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trading"
+version = "0.1.0"
+description = "Cython-based trading framework"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["trading*"]
+
+[tool.setuptools.package-data]
+"trading.cy" = ["*.pxd"]
+
+[tool.setuptools]
+ext-modules = [
+  {name = "trading.cy.analysis_base", sources = ["trading/cy/analysis_base.pyx"]},
+  {name = "trading.cy.analysis_module1", sources = ["trading/cy/analysis_module1.pyx"]},
+  {name = "trading.cy.analysis_module2", sources = ["trading/cy/analysis_module2.pyx"]},
+  {name = "trading.cy.analysis_module3", sources = ["trading/cy/analysis_module3.pyx"]},
+  {name = "trading.cy.aggregator", sources = ["trading/cy/aggregator.pyx"]},
+  {name = "trading.cy.decision_maker", sources = ["trading/cy/decision_maker.pyx"]}
+]
+
+[tool.setuptools.cmdclass]
+build_ext = "Cython.Build.build_ext"
+
