@@ -4,10 +4,6 @@ __all__ = [
     'data_fetcher',
     'preprocessor',
     'trade_executor',
-    'analysis_module1',
-    'analysis_module2',
-    'analysis_module3',
-    'aggregator',
-    'decision_maker',
+    'cy',
     'main',
 ]
