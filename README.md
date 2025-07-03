@@ -15,10 +15,11 @@ The Cython sources are located under `trading/cy` so that compiled
 extensions remain separate from pure Python modules.
 
 Cython extensions can be compiled with `pip` since the project now uses a
-`pyproject.toml` based build. Install Cython and build the package in-place:
+`pyproject.toml` based build. Install Cython and build the package in-place
+before running the example:
 
 ```bash
-pip install cython
+pip install cython requests
 pip install -e .
 ```
 
